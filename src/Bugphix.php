@@ -16,7 +16,7 @@ class Bugphix
 
     public function version()
     {
-        return 'v1.5.3';
+        return 'v1.5.5';
     }
 
     public function asset($asset = '')
@@ -29,7 +29,7 @@ class Bugphix
         try {
             $fileHeaders = get_headers($this->asset('/js/app.js'));
             return stripos($fileHeaders[0], "200 OK") ? true : false;
-        } catch (\Exception $e) {
+        } catch (Throwable $e) {
             return false;
         }
     }
