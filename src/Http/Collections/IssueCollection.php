@@ -24,7 +24,7 @@ class IssueCollection extends JsonResource
         $event = Event::issueId($this->id);
 
         $eventUserArray = $event;
-        $eventUser = EventUser::whereIn('event_id', $eventUserArray->pluck('id'))->count();
+        $eventUser = EventUser::whereIn('event_id', $eventUserArray->pluck('id'))->get()->unique('user_id')->count();
 
         $deletedAt = null;
         if ($this->deleted_at) {
