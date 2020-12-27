@@ -19,7 +19,7 @@ class CreateBugphixIssuesTable extends Migration
             $table->mediumText('issue_error_exception');
             $table->mediumText('issue_error_message');
             $table->enum('issue_status', ['unresolved', 'resolved', 'ignored'])->default('unresolved');
-            $table->timestamps();
+            $table->timestamps(2);
             $table->softDeletes();
 
             $table->foreign('issue_project_id')

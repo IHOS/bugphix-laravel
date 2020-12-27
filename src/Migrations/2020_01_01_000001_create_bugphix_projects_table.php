@@ -21,7 +21,7 @@ class CreateBugphixProjectsTable extends Migration
             $table->string('project_platform')->default('laravel');
             $table->string('project_token');
             $table->boolean('is_active')->default(1);
-            $table->timestamps();
+            $table->timestamps(2);
             $table->softDeletes();
         });
     }

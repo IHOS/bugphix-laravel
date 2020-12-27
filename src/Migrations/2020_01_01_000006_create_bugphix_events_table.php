@@ -17,7 +17,7 @@ class CreateBugphixEventsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('event_issue_id');
             $table->string('event_environment')->nullable();
-            $table->timestamps();
+            $table->timestamps(2);
 
             $table->foreign('event_issue_id')
                 ->references('id')
